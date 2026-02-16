@@ -84,14 +84,15 @@
             transform: translateY(0);
         }
 
-        /* Nav Link Micro-interactions */
+
+        /* Premium Nav Links */
         .nav-link { 
             cursor: pointer; 
             position: relative; 
-            font-size: 10px; 
-            letter-spacing: 0.4em; 
+            font-size: 11px; 
+            letter-spacing: 0.3em; 
             color: var(--muted-gray);
-            transition: all 0.4s ease; 
+            transition: color 0.4s ease; 
         }
 
         .nav-link:hover, .active-link { color: var(--gold-primary); }
@@ -99,12 +100,12 @@
         .nav-link::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -8px;
             left: 50%;
             width: 0;
             height: 1px;
-            background: var(--gold-primary);
-            transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            background: linear-gradient(to right, transparent, var(--gold-primary), transparent);
+            transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
             transform: translateX(-50%);
         }
 
@@ -387,6 +388,7 @@
             <a onclick="mobileShowView('gallery')" class="text-4xl font-cinzel text-white lang-text" data-th="แกลเลอรี่" data-en="THE GALLERY" data-zh="视觉画廊">แกลเลอรี่</a>
             <a onclick="mobileShowView('reservation')" class="text-4xl font-cinzel text-white lang-text" data-th="จองโต๊ะ" data-en="RESERVATIONS" data-zh="在线订位">จองโต๊ะ</a>
             <a onclick="mobileShowView('story')" class="text-4xl font-cinzel text-white lang-text" data-th="เรื่องราว" data-en="OUR STORY" data-zh="品牌故事">เรื่องราว</a>
+            <a onclick="mobileShowView('contact')" class="text-4xl font-cinzel text-white lang-text" data-th="ติดต่อเรา" data-en="CONTACT US" data-zh="联系我们">ติดต่อเรา</a>            
         </div>
         <div class="mt-auto pt-20 border-t border-white/10 flex justify-center space-x-12">
             <span onclick="setLanguage('th')" class="text-gold-primary text-xl font-bold">TH</span>
@@ -435,10 +437,9 @@
                         
                         <!-- CTA Cluster -->
                         <div class="flex flex-col sm:flex-row items-center gap-10">
-                            <button onclick="showView('menu')" class="group relative px-16 py-6 overflow-hidden">
-                                <div class="absolute inset-0 bg-gold-primary transition-transform duration-500 group-hover:scale-110"></div>
+                            <button onclick="showView('menu')" class="group relative px-16 py-6 border border-white/20 hover:border-gold-primary transition-all duration-500">
                                 <span class="relative z-10 text-white font-black tracking-[0.5em] text-[10px] uppercase lang-text"
-                                    data-th="สำรวจเมนู" data-en="EXPLORE MENU" data-zh="探索菜单">สำรวจเมนู</span>
+                                data-th="สำรวจเมนู" data-en="EXPLORE MENU" data-zh="探索菜单">สำรวจเมนู</span>
                             </button>
                             <button onclick="showView('reservation')" class="group relative px-16 py-6 border border-white/20 hover:border-gold-primary transition-all duration-500">
                                 <span class="relative z-10 text-white font-black tracking-[0.5em] text-[10px] uppercase lang-text"
@@ -505,6 +506,7 @@
                     </div>
                 </div>
             </div>
+            
 
             <!-- 3. The Art of Roasting (New Section) -->
             <div class="py-40 bg-black relative overflow-hidden">
@@ -759,6 +761,46 @@
             </div>
         </section>
 
+
+        <!-- GALLERY SECTION -->
+        <section id="gallery" class="view-section pt-48 pb-32">
+            <div class="max-w-[1600px] mx-auto px-8">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-12" data-aos="fade-up">
+                    <div class="space-y-6">
+                        <span class="text-gold-primary tracking-[0.8em] text-[11px] uppercase block font-bold lang-text" data-th="พื้นที่แห่งแรงบันดาลใจ" data-en="SPACE OF INSPIRATION" data-zh="灵感空间">พื้นที่แห่งแรงบันดาลใจ</span>
+                        <h2 class="text-6xl md:text-9xl font-cinzel leading-none lang-text" data-th="มุมมองที่<br><span class='gold-text italic'>สมบูรณ์แบบ</span>" data-en="THE PERFECT<br><span class='gold-text italic'>PERSPECTIVE</span>" data-zh="完美的<br><span class='gold-text italic'>视角</span>">มุมมองที่<br><span class="gold-text italic">สมบูรณ์แบบ</span></h2>
+                    </div>
+                    <p class="text-stone-500 max-w-sm text-lg font-light leading-relaxed lang-text"
+                        data-th="เราออกแบบทุกตารางนิ้วเพื่อสร้างความสมดุลระหว่างความดิบของโครงสร้าง Industrial และความประณีตของการตกแต่งชั้นสูง"
+                        data-en="Designed every inch to balance the raw industrial structure with highly refined decor."
+                        data-zh="精心设计每一寸空间，平衡原始工业结构与高度精致的装饰。">
+                        เราออกแบบทุกตารางนิ้วเพื่อสร้างความสมดุลระหว่างความดิบของโครงสร้าง Industrial และความประณีตของการตกแต่งชั้นสูง
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                    <!-- Gallery Layout 1 -->
+                    <div class="md:col-span-8 md:row-span-2 premium-card aspect-video md:aspect-auto" data-aos="zoom-in">
+                        <div class="placeholder-image"></div>
+                    </div>
+                    <div class="md:col-span-4 aspect-square premium-card" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="placeholder-image"></div>
+                    </div>
+                    <div class="md:col-span-4 aspect-square premium-card" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="placeholder-image"></div>
+                    </div>
+                    
+                    <!-- Gallery Layout 2 -->
+                    <div class="md:col-span-4 aspect-square premium-card" data-aos="zoom-in">
+                        <div class="placeholder-image"></div>
+                    </div>
+                    <div class="md:col-span-8 premium-card aspect-video" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="placeholder-image"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- RESERVATION VIEW -->
         <section id="reservation" class="view-section pt-48 pb-40">
             <div class="max-w-7xl mx-auto px-8">
@@ -809,11 +851,16 @@
                                         <option>2 Persons</option>
                                         <option>4 Persons</option>
                                         <option>6 Persons</option>
-                                        <option>10+ (Private Room)</option>
+                                        <option>10+ (Private)</option>
                                     </select>
                                 </div>
                             </div>
-                            <button type="submit" class="w-full bg-gold-primary py-6 text-black font-black tracking-[0.6em] uppercase text-xs hover:bg-white transition-all duration-700">Submit Booking</button>
+                            <button type="submit" class="w-full py-6 bg-gold-primary font-black tracking-[0.5em] uppercase hover:bg-white transition-all duration-700 text-[12px] shadow-2xl lang-text"
+                                data-th="<span class='gold-text'>ยืนยันการสำรองที่นั่ง</span>" 
+                                data-en="<span class='gold-text'>CONFIRM RESERVATION</span>" 
+                                data-zh="<span class='gold-text'>确认预订</span>">
+                                <span class="gold-text">ยืนยันการสำรองที่นั่ง</span>
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -840,7 +887,44 @@
             </div>
         </section>
 
-    </main>
+            <!-- CONTACT VIEW -->
+        <section id="contact" class="view-section pt-48 pb-40">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-32">
+                <div data-aos="fade-up">
+                    <h2 class="text-7xl font-serif italic mb-16">Talk to Us</h2>
+                    <div class="space-y-16">
+                        <div class="grid grid-cols-2 gap-12">
+                            <div>
+                                <h4 class="font-cinzel text-[#c29d53] text-sm mb-4">Location</h4>
+                                <p class="text-stone-400 text-sm leading-relaxed">96 Timeless Coffee & Eatery<br>Pattaya, Chonburi 20150</p>
+                            </div>
+                            <div>
+                                <h4 class="font-cinzel text-[#c29d53] text-sm mb-4">Opening Hours</h4>
+                                <p class="text-stone-400 text-sm leading-relaxed">Daily: 10:00 - 22:00<br>Kitchen Closes: 21:30</p>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-cinzel text-[#c29d53] text-sm mb-8">Follow Our Journey</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-btn"><i class="fab fa-line"></i></a>
+                                <a href="#" class="social-btn"><i class="fab fa-tripadvisor"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative h-[600px] grayscale contrast-125 opacity-40 border border-stone-800" data-aos="zoom-in">
+                    <div class="absolute inset-0 bg-stone-900 flex flex-col items-center justify-center">
+                        <i class="fas fa-map-marked-alt text-6xl text-stone-700 mb-6"></i>
+                        <span class="text-stone-600 font-cinzel tracking-[0.5em] text-xs">Interactive Map Unavailable</span>
+                        <a href="#" class="mt-8 text-[#c29d53] text-[10px] font-bold uppercase tracking-widest border-b border-[#c29d53]/30">Open Google Maps</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
 
     <!-- FOOTER -->
     <footer class="pt-40 pb-20 bg-[#020202] border-t border-white/5">
@@ -864,10 +948,10 @@
                     <div class="space-y-8">
                         <h5 class="text-gold-primary text-[10px] tracking-[0.5em] uppercase font-bold">Navigation</h5>
                         <ul class="space-y-4 text-[11px] tracking-widest text-stone-600 uppercase">
-                            <li><a onclick="showView('home')" class="hover:text-white cursor-pointer transition-colors">Home</a></li>
-                            <li><a onclick="showView('menu')" class="hover:text-white cursor-pointer transition-colors">Menu</a></li>
-                            <li><a onclick="showView('gallery')" class="hover:text-white cursor-pointer transition-colors">Gallery</a></li>
-                            <li><a onclick="showView('reservation')" class="hover:text-white cursor-pointer transition-colors">Booking</a></li>
+                            <li><a onclick="showView('home')" class="hover:text-white transition-colors cursor-pointer lang-text" data-th="หน้าหลัก" data-en="HOME" data-zh="首页">หน้าหลัก</a></li>
+                            <li><a onclick="showView('menu')" class="hover:text-white transition-colors cursor-pointer lang-text" data-th="เมนูพรีเมียม" data-en="PREMIUM MENU" data-zh="菜单">เมนูพรีเมียม</a></li>
+                            <li><a onclick="showView('gallery')" class="hover:text-white transition-colors cursor-pointer lang-text" data-th="แกลเลอรี่" data-en="GALLERY" data-zh="画廊">แกลเลอรี่</a></li>
+                            <li><a onclick="showView('reservation')" class="hover:text-white transition-colors cursor-pointer lang-text" data-th="จองโต๊ะ" data-en="RESERVATIONS" data-zh="预订">จองโต๊ะ</a></li>
                         </ul>
                     </div>
                     <div class="space-y-8">
